@@ -1,6 +1,6 @@
 Name:           freego
 Version:        4.0
-Release:        %mkrel 2
+Release:        %mkrel 3
 Summary:        Easier access to your personal data on free.fr
 Summary(fr):    Simplifie l'accès à vos données personnelles Free.fr
 
