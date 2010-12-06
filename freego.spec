@@ -8,8 +8,9 @@ Group:          Networking/Other
 License:        GPLv2
 URL:            http://www.freego.fr/
 Source0:        http://www.freego.fr/logiciel/linux/FreeGo4-src.zip
-Patch0:         freego-4-prefix.patch.bz2
-Patch1:         freego-4-desktopfile.patch.bz2
+Patch0:         freego-4-prefix.patch
+Patch1:         freego-4-desktopfile.patch
+Patch2:		freego-4-gcc45.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-builtroot
 
 BuildRequires:  qt4-devel >= 4.4.0
@@ -29,7 +30,7 @@ de consulter vos e-mails et bien plus encore.
 %setup -q -n FreeGo4
 %patch0 -p0 -b .prefix
 %patch1 -p0 -b .desktopfile
-
+%patch2 -p0 -b .gcc
 
 %build
 %qmake_qt4
