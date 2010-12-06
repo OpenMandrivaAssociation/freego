@@ -1,20 +1,20 @@
-Name:           freego
-Version:        4.0
-Release:        %mkrel 3
-Summary:        Easier access to your personal data on free.fr
-Summary(fr):    Simplifie l'accès à vos données personnelles Free.fr
+Name:		freego
+Version:	4.5
+Release:	%mkrel 1
+Summary:	Easier access to your personal data on free.fr
+Summary(fr):	Simplifie l'accès à vos données personnelles Free.fr
 
-Group:          Networking/Other
-License:        GPLv2
-URL:            http://www.freego.fr/
-Source0:        http://www.freego.fr/logiciel/linux/FreeGo4-src.zip
-Patch0:         freego-4-prefix.patch
-Patch1:         freego-4-desktopfile.patch
+Group:		Networking/Other
+License:	GPLv2
+URL:		http://www.freego.fr/
+Source0:	http://www.freego.fr/logiciel/linux/FreeGo%{version}.zip
+Patch0:		freego-4-prefix.patch
+Patch1:		freego-4-desktopfile.patch
 Patch2:		freego-4-gcc45.patch
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-builtroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-builtroot
 
-BuildRequires:  qt4-devel >= 4.4.0
-Requires:       vlc
+BuildRequires:	qt4-devel >= 4.4.0
+Requires:	vlc
 
 %description
 FreeGo makes it easier to access your personal data on the french
@@ -27,7 +27,7 @@ des innovations de votre fournisseur d'accès, de tester votre débit,
 de consulter vos e-mails et bien plus encore.
 
 %prep
-%setup -q -n FreeGo4
+%setup -q -c Freego%{version}
 %patch0 -p0 -b .prefix
 %patch1 -p0 -b .desktopfile
 %patch2 -p0 -b .gcc
@@ -71,4 +71,3 @@ desktop-file-install  \
 %{_bindir}/*
 %{_datadir}/applications/*.desktop
 %{_datadir}/icons/hicolor/*/apps/*.png
-
