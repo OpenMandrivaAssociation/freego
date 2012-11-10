@@ -1,0 +1,22 @@
+--- src/ui/UIMain.cpp.orig	2010-12-06 07:08:07.000000000 +0100
++++ src/ui/UIMain.cpp	2010-12-06 07:08:29.000000000 +0100
+@@ -174,7 +174,7 @@
+ 		return;
+ 	}
+ 	// get absolute file path
+-	QString f = QFileInfo::QFileInfo( s ).canonicalFilePath();
++	QString f = QFileInfo( s ).canonicalFilePath();
+ 	// rename old app
+ 	QString m;
+ 	if ( !QFile::rename( QApplication::applicationFilePath(), QApplication::applicationFilePath().append( ".bak.%1" ).arg( QDate::currentDate().toString( "dddd dd MMMM yyyy" ) ) ) )
+--- src/Options.cpp.gcc	2010-12-06 07:10:55.000000000 +0100
++++ src/Options.cpp	2010-12-06 07:11:16.000000000 +0100
+@@ -65,7 +65,7 @@
+ //
+ QString Options::getFile( const QString& p, const QString& f )
+ {
+-	QString s = settingsPath().append( QString( "/%1/%2" ).arg( p, QFileInfo::QFileInfo( f ).fileName() ) );
++	QString s = settingsPath().append( QString( "/%1/%2" ).arg( p, QFileInfo( f ).fileName() ) );
+ 	if ( QFile::exists( s ) )
+ 		return s;
+ 	return f;
