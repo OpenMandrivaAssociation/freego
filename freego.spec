@@ -71,3 +71,27 @@ desktop-file-install  \
 %{_bindir}/*
 %{_datadir}/applications/*.desktop
 %{_datadir}/icons/hicolor/*/apps/*.png
+
+
+%changelog
+* Mon Dec 06 2010 Stéphane Téletchéa <steletch@mandriva.org> 4.5-1mdv2011.0
++ Revision: 612670
+- Update Freego to version 4.5, using svn snapshot (personal communication) since some files were missing
+- Fix spaces and tabs mixing
+
+* Mon Dec 06 2010 Funda Wang <fwang@mandriva.org> 4.0-3mdv2011.0
++ Revision: 611688
+- fix build
+
+  + Oden Eriksson <oeriksson@mandriva.com>
+    - rebuild
+
+* Fri Sep 11 2009 Thierry Vignaud <tv@mandriva.org> 4.0-2mdv2010.1
++ Revision: 437590
+- rebuild
+
+* Thu Feb 05 2009 Jerome Martin <jmartin@mandriva.org> 4.0-1mdv2009.1
++ Revision: 337712
+- import freego
+
+
