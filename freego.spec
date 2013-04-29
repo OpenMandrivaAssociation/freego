@@ -1,6 +1,6 @@
 Name:		freego
 Version:	4.5
-Release:	%mkrel 1
+Release:	2
 Summary:	Easier access to your personal data on free.fr
 Summary(fr):	Simplifie l'accès à vos données personnelles Free.fr
 
@@ -11,7 +11,6 @@ Source0:	http://www.freego.fr/logiciel/linux/FreeGo%{version}.zip
 Patch0:		freego-4-prefix.patch
 Patch1:		freego-4-desktopfile.patch
 Patch2:		freego-4-gcc45.patch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-builtroot
 
 BuildRequires:	qt4-devel >= 4.4.0
 Requires:	vlc
@@ -20,11 +19,11 @@ Requires:	vlc
 FreeGo makes it easier to access your personal data on the french
 ISP Free.
 
-%description(fr)
-FreeGo simplifie l'accès à vos données personnelles Free. De plus,
-cet outil vous permet en un clic d'être informé de l'état du réseau,
-des innovations de votre fournisseur d'accès, de tester votre débit,
-de consulter vos e-mails et bien plus encore.
+# %description(fr)
+# FreeGo simplifie l'accès à vos données personnelles Free. De plus,
+# cet outil vous permet en un clic d'être informé de l'état du réseau,
+# des innovations de votre fournisseur d'accès, de tester votre débit,
+# de consulter vos e-mails et bien plus encore.
 
 %prep
 %setup -q -c Freego%{version}
@@ -37,8 +36,6 @@ de consulter vos e-mails et bien plus encore.
 %make
 
 %install
-[ "%{buildroot}" != '/' ] && rm -rf %{buildroot}
-
 %makeinstall INSTALL_ROOT=%buildroot
 %__install -p -m 755 -D FreeGo %buildroot%{_bindir}/FreeGo
 
@@ -47,23 +44,6 @@ desktop-file-install  \
        --delete-original\
        %buildroot/%{_datadir}/applications/*.desktop
 
-
-%if %mdkversion < 200900
-%post
-%{update_menus}
-%{update_desktop_database}
-%update_icon_cache hicolor
-%endif
-
-%if %mdkversion < 200900
-%postun
-%{clean_menus}
-%{clean_desktop_database}
-%clean_icon_cache hicolor
-%endif
-
-%clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
