@@ -1,7 +1,7 @@
 Summary:	Easier access to your personal data on free.fr
 Name:		freego
 Version:	4.5
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Networking/Other
 Url:		http://www.freego.fr/
