@@ -4,7 +4,7 @@ Version:	4.5
 Release:	3
 License:	GPLv2+
 Group:		Networking/Other
-Url:		http://www.freego.fr/
+Url:		https://www.freego.fr/
 Source0:	http://www.freego.fr/logiciel/linux/FreeGo%{version}.zip
 Patch0:		freego-4-prefix.patch
 Patch1:		freego-4-desktopfile.patch
