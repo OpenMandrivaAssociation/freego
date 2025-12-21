@@ -9,6 +9,7 @@ Source0:	http://www.freego.fr/logiciel/linux/FreeGo%{version}.zip
 Patch0:		freego-4-prefix.patch
 Patch1:		freego-4-desktopfile.patch
 Patch2:		freego-4-gcc45.patch
+BuildRequires:	make
 BuildRequires:	qt4-devel
 Requires:	vlc
 
